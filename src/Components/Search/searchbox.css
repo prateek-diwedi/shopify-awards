@@ -1,0 +1,25 @@
+.searchbox-wrap {
+  padding: 8rem;
+}
+
+.searchbox {
+  display: block;
+  width: 100%;
+  padding: 10px;
+
+  outline: none;
+  background: none;
+
+  border-radius: 8px;
+  background-color: white;
+
+  color: #555756;
+  font-size: 20px;
+  font-weight: 300;
+
+  transition: 0.4 ease-out;
+}
+
+.searchbox:focus {
+  box-shadow: 0px, 0px, 8px, 3px #014c3e;
+}
