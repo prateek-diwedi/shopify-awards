@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import "./searchbox.css";
 
-function SearchBar() {
+import { connect } from "react-redux";
+import { movieName } from "../../redux/actions/actions";
+
+function SearchBar(props) {
   const [state, setState] = useState("");
 
   const onChange = (event) => {
@@ -10,7 +13,8 @@ function SearchBar() {
   const submitForm = (event) => {
     const value = state;
     event.preventDefault();
-    console.log(value);
+
+    props.changeName(value);
   };
 
   return (
@@ -28,4 +32,18 @@ function SearchBar() {
   );
 }
 
-export default SearchBar;
+const mapStatetoProps = (state) => {
+  return {
+    data: state.data,
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    changeName: (name) => {
+      dispatch(movieName(name));
+    },
+  };
+};
+
+export default connect(mapStatetoProps, mapDispatchToProps)(SearchBar);

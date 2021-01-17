@@ -1,20 +1,22 @@
 import HomePage from "./Layouts/Home";
 import "./App.css";
 import { connect } from "react-redux";
+import { anotherName } from "./redux/actions/actions";
 
 function App(props) {
-  console.log("f -->", props.fname);
-  console.log("l -->", props.lname);
   return (
     <div className="App">
       <HomePage />
-      <button
+      {/* <button
         onClick={() => {
-          props.chnageName({ name: "Deepika", last: "Sharma" });
+          props.chnageName({ name: "users" });
         }}
       >
         CHnage Name
       </button>
+
+      <h1> {props.fname.name}</h1>
+      <h1> {props.lname.last}</h1> */}
     </div>
   );
 }
@@ -29,7 +31,7 @@ const mapStatetoProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     chnageName: (name) => {
-      dispatch({ type: "CHANGE_NAME", payload: name });
+      dispatch(anotherName(name));
     },
   };
 };

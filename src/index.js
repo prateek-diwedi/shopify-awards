@@ -4,14 +4,23 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
-import { createStore } from "redux";
+import { createStore, applyMiddleware, compose, combineReducers } from "redux";
 import { Provider } from "react-redux";
+import thunk from "redux-thunk";
 
-import reducer from "./redux/reducers/reducer";
+import nameReducer from "./redux/reducers/nameReducer";
+import lastReducers from "./redux/reducers/lastReducers";
+import SearchMovieReducer from "./redux/reducers/searchMovieReducers";
 
+const masterReducer = combineReducers({
+  name: nameReducer,
+  last: lastReducers,
+  data: SearchMovieReducer,
+});
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(
-  reducer,
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  masterReducer,
+  composeEnhancers(applyMiddleware(thunk))
 );
 
 ReactDOM.render(

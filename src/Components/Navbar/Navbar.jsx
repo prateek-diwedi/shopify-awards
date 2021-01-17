@@ -3,9 +3,9 @@ import "./navbar.css";
 
 function Navbar() {
   return (
-    <div className="navbar">
-      <h2> The Shoppies </h2>
-      <h2> Nominations </h2>
+    <div className="navbar_wrap">
+      <h3> The Shoppies </h3>
+      <h3> Nominations </h3>
     </div>
   );
 }

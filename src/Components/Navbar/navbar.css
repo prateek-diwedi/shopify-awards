@@ -1,7 +1,9 @@
-.navbar {
+.navbar_wrap {
   display: flex;
   justify-content: space-between;
   background: #014c3e;
+}
+.navbar_wrap h3 {
   color: #ffffff;
   padding: 2%;
 }
