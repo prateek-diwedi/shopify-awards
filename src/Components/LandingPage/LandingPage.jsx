@@ -5,12 +5,13 @@ import { connect } from "react-redux";
 export const LandingPage = (props) => {
   const [data, setData] = useState([]);
 
-  const movieData = props.data.data;
+  const nominatedMovies = props.data.data;
+  console.log("modal", nominatedMovies);
   let updatedData = "";
-  if (movieData === undefined) {
+  if (nominatedMovies === undefined) {
     updatedData = [{ title: "", image: "", year: "" }];
   } else {
-    updatedData = movieData.Search;
+    updatedData = nominatedMovies.Search;
   }
 
   return (
@@ -19,8 +20,8 @@ export const LandingPage = (props) => {
         display: "flex",
         flexWrap: "wrap",
         justifyContent: "space-between",
-        paddingLeft: "5%",
-        paddingRight: "5%",
+        paddingLeft: "11%",
+        paddingRight: "11%",
       }}
     >
       {updatedData.map((movies) => (
@@ -28,6 +29,7 @@ export const LandingPage = (props) => {
           title={movies.Title}
           image={movies.Poster}
           year={movies.Year}
+          button="Nominate"
         />
       ))}
     </div>

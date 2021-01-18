@@ -25,3 +25,28 @@ export const movieName = (name) => {
     });
   };
 };
+
+let totalNomination = 0;
+export const nomination = (title, image, year) => {
+  console.log("inside nomination action", title, image, year);
+  return {
+    type: "ADD_NOMINATION",
+    payload: {
+      title: title,
+      image: image,
+      year: year,
+      id: ++totalNomination,
+    },
+  };
+};
+
+export const removeNomination = (title, year) => {
+  console.log("inside remove nomination action id:", title, year);
+  return {
+    type: "REMOVE_NOMINATION",
+    payload: {
+      title: title,
+      year: year,
+    },
+  };
+};
