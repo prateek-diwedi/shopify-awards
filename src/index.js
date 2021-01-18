@@ -2,20 +2,17 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
+import { ToastContainer } from "react-toastify";
 import reportWebVitals from "./reportWebVitals";
 
 import { createStore, applyMiddleware, compose, combineReducers } from "redux";
 import { Provider } from "react-redux";
 import thunk from "redux-thunk";
 
-import nameReducer from "./redux/reducers/nameReducer";
-import lastReducers from "./redux/reducers/lastReducers";
 import SearchMovieReducer from "./redux/reducers/searchMovieReducers";
 import addNominationReducer from "./redux/reducers/addNominations";
 
 const masterReducer = combineReducers({
-  name: nameReducer,
-  last: lastReducers,
   data: SearchMovieReducer,
   addNomination: addNominationReducer,
 });
@@ -27,9 +24,8 @@ const store = createStore(
 
 ReactDOM.render(
   <Provider store={store}>
-    {/* <React.StrictMode> */}
     <App />
-    {/* </React.StrictMode> */}
+    <ToastContainer />
   </Provider>,
   document.getElementById("root")
 );

@@ -1,7 +1,5 @@
 const addMovieNomination = (state = [], action) => {
-  console.log("state insid add nom --->", state);
   switch (action.type) {
-    // console.log("inside add nomination reducer", action);
     case "ADD_NOMINATION":
       return [
         ...state,

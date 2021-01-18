@@ -1,12 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import MovieCard from "../MovieCard/MovieCard";
 import { connect } from "react-redux";
 
 export const LandingPage = (props) => {
-  const [data, setData] = useState([]);
-
   const nominatedMovies = props.data.data;
-  console.log("modal", nominatedMovies);
   let updatedData = "";
   if (nominatedMovies === undefined) {
     updatedData = [{ title: "", image: "", year: "" }];

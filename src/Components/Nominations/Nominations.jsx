@@ -1,16 +1,21 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
+import { notifySuccess } from "../../Components/Toast/Toast";
 
 import { Modal, Button } from "react-bootstrap";
 import MovieCard from "../MovieCard/MovieCard";
 
 export const Nominations = (props) => {
   const [show, setShow] = useState(false);
-  console.log("movie props nomination Data new -->", props.button);
+
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
   const movieData = props.addNomination.addNomination;
+
+  if (movieData.length === 5) {
+    notifySuccess("Thank You!, you have selected 5 movies.");
+  }
 
   let updatedData = "";
   if (movieData === undefined) {
@@ -19,7 +24,6 @@ export const Nominations = (props) => {
     updatedData = movieData;
   }
 
-  console.log("movie Data new -->", updatedData);
   return (
     <>
       <Button
@@ -41,7 +45,7 @@ export const Nominations = (props) => {
         keyboard={false}
       >
         <Modal.Header closeButton>
-          <Modal.Title>Modal title</Modal.Title>
+          <Modal.Title>Nominated Movies</Modal.Title>
         </Modal.Header>
         <Modal.Body
           style={{
