@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./searchbox.css";
+import { Button } from "react-bootstrap";
 
 import { connect } from "react-redux";
 import { movieName } from "../../redux/actions/actions";
@@ -19,7 +20,7 @@ function SearchBar(props) {
 
   return (
     <div className="searchbox-wrap">
-      <form onSubmit={submitForm}>
+      <form onSubmit={submitForm} className="searchbox_form">
         <input
           type="text"
           placeholder="Search for a movie..."
@@ -27,6 +28,19 @@ function SearchBar(props) {
           value={state}
           onChange={onChange}
         />
+        <Button
+          variant="secondary"
+          onClick={submitForm}
+          style={{
+            background: "#014C3E",
+            alignItems: "center",
+            borderRadius: "8px",
+            marginLeft: "5%",
+          }}
+        >
+          {" "}
+          Search{" "}
+        </Button>
       </form>
     </div>
   );

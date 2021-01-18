@@ -2,6 +2,10 @@
   padding: 8rem;
 }
 
+.searchbox_form {
+  display: flex;
+}
+
 .searchbox {
   display: block;
   width: 100%;
