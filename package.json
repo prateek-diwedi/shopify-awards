@@ -30,7 +30,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "electron-builder build --mac --win --publish never",
+    "build": "react-scripts build",
     "deploy": "electron-builder build --mac --win --publish always",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
