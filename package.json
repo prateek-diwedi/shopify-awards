@@ -13,6 +13,7 @@
     "concurrently": "^6.2.0",
     "cross-env": "^7.0.3",
     "electron-is-dev": "^2.0.0",
+    "electron-updater": "^4.3.9",
     "react": "^17.0.1",
     "react-bootstrap": "^1.4.3",
     "react-circular-progressbar": "^2.0.3",
@@ -29,11 +30,12 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "electron-builder build --mac --win --publish never",
+    "deploy": "electron-builder build --mac --win --publish always",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "electron:serve": "concurrently -k \"cross-env BROWSER=none npm start\" \"npm run electron:start\"",
-    "electron:build": "yarn build && electron-builder -c.extraMetadata.main=build/main.js",
+    "electron:build": "npm run build && electron-builder -c.extraMetadata.main=build/main.js",
     "electron:start": "wait-on tcp:3000 && electron ."
   },
   "build": {
@@ -69,7 +71,10 @@
   },
   "devDependencies": {
     "electron": "^13.0.1",
-    "electron-builder": "^22.10.5",
-    "electron-packager": "^15.2.0"
+    "electron-builder": "^22.10.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/prateek-diwedi/shopify-awards.git"
   }
 }
