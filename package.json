@@ -30,8 +30,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "electron-builder build --mac --win --publish never",
-    "deploy": "electron-builder build --mac --win --publish always",
+    "build": "electron-builder build --mac --publish never",
+    "deploy": "electron-builder build --mac --publish always",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "electron:serve": "concurrently -k \"cross-env BROWSER=none npm start\" \"npm run electron:start\"",
@@ -45,7 +45,8 @@
       "dist/**/*",
       "build/**/*",
       "node_modules/**/*",
-      "package.json"
+      "package.json",
+      "./public/main.js"
     ],
     "directories": {
       "buildResources": "assets"
