@@ -5,7 +5,7 @@ import NominationPage from "../../Components/Nominations/Nominations";
 function Navbar() {
   return (
     <div className="navbar_wrap">
-      <h3> The Shoppies 2.0 </h3>
+      <h3> The Shoppies 3.0 </h3>
       <NominationPage buttonName="Nominations" />
     </div>
   );
