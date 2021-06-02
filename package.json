@@ -30,7 +30,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "electron-builder build --mac --publish never",
+    "build": "electron-builder build --mac --win --publish never",
     "deploy": "electron-builder build --mac --publish always",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
@@ -73,9 +73,5 @@
   "devDependencies": {
     "electron": "^13.0.1",
     "electron-builder": "^22.10.5"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/prateek-diwedi/shopify-awards.git"
   }
 }
