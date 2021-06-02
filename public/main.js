@@ -7,9 +7,11 @@ require("@electron/remote/main").initialize();
 
 const { autoUpdater } = require("electron-updater");
 
+let win;
+
 function createWindow() {
   // Create the browser window.
-  const win = new BrowserWindow({
+  win = new BrowserWindow({
     width: 800,
     height: 600,
     webPreferences: {
